@@ -3,6 +3,7 @@ import Hero from './components/sections/Hero';
 import Features from './components/sections/Features';
 import CTA from './components/sections/CTA';
 import { Helmet } from 'react-helmet-async';
+import { ScrollProgress } from './components/ui/ScrollProgress';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
 
+      <ScrollProgress />
       <Navigation />
       <main>
         <Hero />
