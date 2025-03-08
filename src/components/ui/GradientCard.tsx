@@ -1,7 +1,8 @@
 import { ArrowUpRightIcon } from "lucide-react";
 import type { ReactNode } from "react";
-import { useMouse } from "../../hooks/usemouse";
+import { useMouse } from "../../hooks/useMouse";
 import { cn } from "../../lib/utils";
+import { theme } from "../../styles/theme";
 
 interface GradientCardProps {
   title: string;
@@ -30,7 +31,7 @@ export const GradientCard = ({
       ref={parentRef}
     >
       {withArrow && (
-        <ArrowUpRightIcon className="absolute right-2 top-2 z-10 size-5 translate-y-4 text-neutral-700 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100 dark:text-neutral-300" />
+        <ArrowUpRightIcon className="absolute right-2 top-2 z-10 size-5 translate-y-4 text-neutral-700 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100" />
       )}
       <div
         className={cn(
@@ -50,26 +51,25 @@ export const GradientCard = ({
           height: `${circleSize}px`,
           left: `${mouse.elementX}px`,
           top: `${mouse.elementY}px`,
-          background:
-            "linear-gradient(135deg, #3BC4F2, #7A69F9,#F26378,#F5833F)",
+          background: `linear-gradient(135deg, ${theme.colors.gradient.card.from}, ${theme.colors.gradient.card.via}, ${theme.colors.gradient.card.to})`,
         }}
       />
-      <div className="absolute inset-px rounded-[19px] bg-neutral-100/80" />
+      <div className="absolute inset-px rounded-[19px] bg-white/80" />
       <div className={cn("relative p-6", className)}>
         {icon && (
           <div className="text-4xl mb-3">{icon}</div>
         )}
-        <h3 className="text-lg font-semibold text-neutral-800 mb-2">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">
           {title}
         </h3>
-        <p className="text-neutral-600 mb-4">
+        <p className="text-gray-600 mb-4">
           {description}
         </p>
         {features && features.length > 0 && (
           <ul className="space-y-2">
             {features.map((feature, idx) => (
               <li key={idx} className="flex items-center text-gray-700">
-                <svg className="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                <svg className={cn("w-4 h-4 mr-2", `text-[${theme.colors.primary[500]}]`)} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 {feature}
