@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { ShimmerButton } from '../ui/ShimmerButton';
 
 const Hero = () => {
   return (
@@ -30,13 +31,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl"
-            >
+            <ShimmerButton>
               Try WorkBuddy for Free
-            </motion.button>
+            </ShimmerButton>
           </motion.div>
         </motion.div>
 

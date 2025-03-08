@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { ShimmerButton } from '../ui/ShimmerButton';
 
 const CTA = () => {
   const [ref, inView] = useInView({
@@ -25,13 +26,9 @@ const CTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl w-full sm:w-auto"
-            >
+            {/* <ShimmerButton className="w-full sm:w-auto">
               Try WorkBuddy for Free
-            </motion.button>
+            </ShimmerButton> */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

@@ -11,6 +11,7 @@ export default {
       },
       animation: {
         blob: "blob 7s infinite",
+        "shine-infinite": "shine 2s linear infinite",
       },
       keyframes: {
         blob: {
@@ -26,6 +27,10 @@ export default {
           "100%": {
             transform: "translate(0px, 0px) scale(1)",
           },
+        },
+        shine: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
         },
       },
     },

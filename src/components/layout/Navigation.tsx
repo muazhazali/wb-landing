@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ShimmerButton } from '../ui/ShimmerButton';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,8 +8,8 @@ const Navigation = () => {
   const navLinks = [
     { name: 'Home', href: '#' },
     { name: 'Features', href: '#features' },
-    { name: 'Demo', href: '#demo' },
-    { name: 'Contact', href: '#contact' },
+    // { name: 'Demo', href: '#demo' },
+    // { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -32,13 +33,9 @@ const Navigation = () => {
                 {link.name}
               </a>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors"
-            >
+            <ShimmerButton className="!px-4 !py-2">
               Try Free
-            </motion.button>
+            </ShimmerButton>
           </div>
 
           {/* Mobile menu button */}
@@ -88,9 +85,11 @@ const Navigation = () => {
               {link.name}
             </a>
           ))}
-          <button className="w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-            Try Free
-          </button>
+          <div className="mt-4">
+            <ShimmerButton className="w-full">
+              Try Free
+            </ShimmerButton>
+          </div>
         </div>
       </motion.div>
     </nav>
